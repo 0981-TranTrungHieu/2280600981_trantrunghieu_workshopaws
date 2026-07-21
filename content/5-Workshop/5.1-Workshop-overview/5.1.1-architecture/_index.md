@@ -48,7 +48,5 @@ EC2 netflop-web
 
 Admin uploads MP4/MKV video to backend, backend stores it in S3 input and creates a MediaConvert job. MediaConvert generates HLS output in S3 output. EventBridge receives job state changes, invokes Lambda, and Lambda calls backend webhook `/api/uploads/mediaconvert/events` to update episode status in RDS.
 
-{{% notice info %}}
-Image needed: main access flow and MediaConvert -> EventBridge -> Lambda -> Backend flow.
-{{% /notice %}}
+![Architecture diagram](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.1-Workshop-overview/5.1.1-architecture/sodo.jpg)
 

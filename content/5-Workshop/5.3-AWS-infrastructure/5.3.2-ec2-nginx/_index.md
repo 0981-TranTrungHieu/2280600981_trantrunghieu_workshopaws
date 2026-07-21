@@ -29,7 +29,7 @@ pm2 status
 pm2 logs
 ```
 
-{{% notice info %}}
-Image needed: EC2 instance, Security Group, Nginx running, and PM2/backend running.
-{{% /notice %}}
+![EC2 running](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.3-AWS-infrastructure/5.3.2-ec2-nginx/ec2running.png)
+![Security group](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.3-AWS-infrastructure/5.3.2-ec2-nginx/security%20gr.png)
+![Nginx status](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.3-AWS-infrastructure/5.3.2-ec2-nginx/ngix%20status.png)
 

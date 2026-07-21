@@ -27,7 +27,6 @@ pm2 status
 pm2 logs
 ```
 
-{{% notice info %}}
-Image needed: deploy/reload terminal, Nginx status, PM2/backend status, and website after deployment.
-{{% /notice %}}
+![PM2 status](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.1-deploy-ssm/pm2%20status.png)
+![Nginx status](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.1-deploy-ssm/ngix%20status.png)
 

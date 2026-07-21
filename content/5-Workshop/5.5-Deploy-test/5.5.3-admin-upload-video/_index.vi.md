@@ -58,13 +58,11 @@ Với video khoảng 5GB, cần xác nhận:
 * Người dùng phát được video qua CloudFront.
 * Admin nhìn thấy tiến trình và kết quả hoàn thành ngay trên UI.
 
-{{% notice info %}}
 ![Admin input](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.3-admin-upload-video/adminin1.png)
 ![Admin upload](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.3-admin-upload-video/adminput1.png)
 ![Upload progress](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.3-admin-upload-video/adminup1.png)
 ![Upload processing](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.3-admin-upload-video/adminup2.png)
 ![Upload complete](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.3-admin-upload-video/adminup3.png)
-{{% /notice %}}
 
 <!-- NETFLOP_DETAIL_START -->
 #### Cách thực hiện upload tập phim trong admin

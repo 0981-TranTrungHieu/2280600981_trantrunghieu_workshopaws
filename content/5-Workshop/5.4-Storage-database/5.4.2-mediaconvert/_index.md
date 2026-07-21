@@ -29,7 +29,6 @@ Output qualities:
 6. Check `.m3u8` and segments in `netflop-output-source`.
 7. Check backend saved `jobId`, `hls_url`, `cloudfront_url`, and `upload_status`.
 
-{{% notice info %}}
-Image needed: MediaConvert job, Complete status, and HLS `.m3u8` output.
-{{% /notice %}}
+![MediaConvert](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.4-Storage-database/5.4.2-mediaconvert/mediaconvert.png)
+![HLS output](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.4-Storage-database/5.4.2-mediaconvert/hls.png)
 

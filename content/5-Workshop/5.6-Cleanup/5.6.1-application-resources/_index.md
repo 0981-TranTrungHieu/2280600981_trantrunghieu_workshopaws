@@ -24,7 +24,5 @@ pre: " <b> 5.6.1. </b> "
 5. Delete unnecessary RDS database/snapshots.
 6. Review unused Security Groups.
 
-{{% notice info %}}
-Image needed: EC2/RDS before cleanup and status after cleanup.
-{{% /notice %}}
+![Cost](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.6-Cleanup/5.6.3-cost-check/cost.png)
 

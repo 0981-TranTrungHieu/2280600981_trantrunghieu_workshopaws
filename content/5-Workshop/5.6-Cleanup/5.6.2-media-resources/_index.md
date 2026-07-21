@@ -26,7 +26,6 @@ pre: " <b> 5.6.2. </b> "
 5. Delete unused EventBridge rules.
 6. Review IAM roles and policies.
 
-{{% notice info %}}
-Image needed: S3 cleanup, CloudFront disabled/deleted, Lambda/EventBridge after cleanup.
-{{% /notice %}}
+![CloudFront](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.4-Storage-database/5.4.3-cloudfront-hls/cloudfront1.png)
+![MediaConvert](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.4-Storage-database/5.4.2-mediaconvert/mediaconvert.png)
 

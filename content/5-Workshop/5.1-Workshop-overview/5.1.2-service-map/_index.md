@@ -22,7 +22,5 @@ pre: " <b> 5.1.2. </b> "
 | AWS Systems Manager | In use | Deploys/reloads EC2 from local AWS CLI |
 | Amazon Cognito | Configured | Cognito/Google auth needs account/region confirmation |
 
-{{% notice info %}}
-Image needed: AWS services list or Netflop service map.
-{{% /notice %}}
+![Service map](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.1-Workshop-overview/sodo.jpg)
 

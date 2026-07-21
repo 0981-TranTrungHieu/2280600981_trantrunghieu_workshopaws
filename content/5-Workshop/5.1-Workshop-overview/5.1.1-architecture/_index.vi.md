@@ -98,9 +98,7 @@ Lambda chuyển .srt sang .vtt nếu cần
 Video Player load subtitle track
 ```
 
-{{% notice info %}}
 ![Sơ đồ kiến trúc](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.1-Workshop-overview/5.1.1-architecture/sodo.jpg)
-{{% /notice %}}
 
 <!-- NETFLOP_DETAIL_START -->
 #### Cách thực hiện kiến trúc

@@ -62,11 +62,9 @@ EC2 cần mở các cổng tối thiểu:
 
 Nếu dùng Systems Manager Session Manager thì có thể hạn chế SSH hơn nữa.
 
-{{% notice info %}}
 ![EC2 running](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.3-AWS-infrastructure/5.3.2-ec2-nginx/ec2running.png)
 ![Security group](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.3-AWS-infrastructure/5.3.2-ec2-nginx/security%20gr.png)
 ![Nginx status](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.3-AWS-infrastructure/5.3.2-ec2-nginx/ngix%20status.png)
-{{% /notice %}}
 
 <!-- NETFLOP_DETAIL_START -->
 #### Cách cài và kiểm tra EC2

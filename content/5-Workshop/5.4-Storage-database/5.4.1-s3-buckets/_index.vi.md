@@ -63,10 +63,8 @@ aws s3 ls s3://netflop-input-source
 aws s3 ls s3://netflop-output-source
 ```
 
-{{% notice info %}}
 ![S3 input](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.4-Storage-database/5.4.1-s3-buckets/s3input.png)
 ![S3 output](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.4-Storage-database/5.4.1-s3-buckets/s3ouput.png)
-{{% /notice %}}
 
 <!-- NETFLOP_DETAIL_START -->
 #### Cách thực hiện upload lên S3

@@ -25,7 +25,6 @@ netflop-output-source
   |-- subtitles/
 ```
 
-{{% notice info %}}
-Image needed: two S3 buckets, video input object, HLS output, and subtitle output.
-{{% /notice %}}
+![S3 input](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.4-Storage-database/5.4.1-s3-buckets/s3input.png)
+![S3 output](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.4-Storage-database/5.4.1-s3-buckets/s3ouput.png)
 

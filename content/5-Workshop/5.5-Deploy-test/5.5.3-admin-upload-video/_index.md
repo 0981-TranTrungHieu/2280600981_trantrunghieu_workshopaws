@@ -26,7 +26,9 @@ pre: " <b> 5.5.3. </b> "
 * `cloudfront_url`
 * `upload_status`
 
-{{% notice info %}}
-Image needed: admin upload screen, S3 input object, MediaConvert Complete job, HLS output, and episode ready status.
-{{% /notice %}}
+![Admin input](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.3-admin-upload-video/adminin1.png)
+![Admin upload](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.3-admin-upload-video/adminput1.png)
+![Upload progress](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.3-admin-upload-video/adminup1.png)
+![Upload processing](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.3-admin-upload-video/adminup2.png)
+![Upload complete](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.3-admin-upload-video/adminup3.png)
 

@@ -20,7 +20,5 @@ User -> Cloudflare DNS + HTTPS -> netflop.win -> EC2 public IP -> Nginx
 4. Check proxy/HTTPS status.
 5. Open `https://netflop.win`.
 
-{{% notice info %}}
-Image needed: Cloudflare DNS record and successful website access through domain.
-{{% /notice %}}
+![DNS record](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.3-AWS-infrastructure/5.3.1-cloudflare-domain/DNSrecord.png)
 
