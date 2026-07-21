@@ -5,9 +5,6 @@ weight: 1
 chapter: false
 pre: " <b> 3.2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
 ![S3, MediaConvert, CloudFront, and website streaming flow](/2280600981_trantrunghieu_workshopaws/images/3-BlogsPosted/3.2-Blog2/s3-cloudfront-streaming.svg)
 
