@@ -5,10 +5,6 @@ weight: 1
 chapter: false
 pre: " <b> 3.3. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
-
 ![AWS media workflow with S3, MediaConvert, CloudFront, Lambda, EventBridge, CloudWatch, and SNS](/2280600981_trantrunghieu_workshopaws/images/3-BlogsPosted/3.3-Blog3/mediaconvert-workflow.svg)
 
 # Building an Event-Driven Media Pipeline on AWS
