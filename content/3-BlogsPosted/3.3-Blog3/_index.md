@@ -1,10 +1,16 @@
-﻿---
+---
 title: "Blog 3"
-date: 2026-06-29
+date: 2024-01-01
 weight: 1
 chapter: false
 pre: " <b> 3.3. </b> "
 ---
+{{% notice warning %}}
+⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
+{{% /notice %}}
+
+![AWS media workflow with S3, MediaConvert, CloudFront, Lambda, EventBridge, CloudWatch, and SNS](/images/3-BlogsPosted/3.3-Blog3/mediaconvert-workflow.svg)
+
 # Building an Event-Driven Media Pipeline on AWS
 
 Hello everyone,
@@ -36,5 +42,4 @@ Through this project, our team found EventBridge to be a very useful service for
 - [Amazon EventBridge events for MediaConvert](https://docs.aws.amazon.com/eventbridge/latest/ref/events-ref-mediaconvert.html)
 - [MediaConvert event list](https://docs.aws.amazon.com/mediaconvert/latest/ug/mediaconvert_event_list.html)
 - [AWS Lambda Developer Guide](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html)
-
 

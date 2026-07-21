@@ -1,10 +1,12 @@
-﻿---
+---
 title: "Blog 1"
-date: 2026-06-15
+date: 2024-01-01
 weight: 1
 chapter: false
 pre: " <b> 3.1. </b> "
 ---
+![So sanh FFmpeg tren EC2 voi AWS Elemental MediaConvert](/images/3-BlogsPosted/3.1-Blog1/ffmpeg-vs-mediaconvert.svg)
+
 Bài 1: Tại sao nhóm mình chọn AWS Elemental MediaConvert thay vì FFmpeg?
 
 Xin chào mọi người,
@@ -37,4 +39,3 @@ Xin cảm ơn mọi người đã dành thời gian đọc bài!
 [https://aws.amazon.com/mediaconvert/](https://aws.amazon.com/mediaconvert/)
 [https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html](https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html?utm_source=chatgpt.com)
 [https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-jobs.html](https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-jobs.html)
-
