@@ -26,7 +26,5 @@ pre: " <b> 5.5.3. </b> "
 * `cloudfront_url`
 * `upload_status`
 
-{{% notice info %}}
 Image needed: admin upload screen, S3 input object, MediaConvert Complete job, HLS output, and episode ready status.
-{{% /notice %}}
 

@@ -35,7 +35,5 @@ netflop-alerts
 4. Check SNS topic `netflop-alerts`.
 5. Check Billing Dashboard/AWS Budgets.
 
-{{% notice info %}}
 Image needed: CloudWatch alarms, Lambda logs, SNS topic `netflop-alerts`, and Billing Dashboard.
-{{% /notice %}}
 

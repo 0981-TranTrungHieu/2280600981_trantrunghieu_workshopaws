@@ -47,10 +47,8 @@ Một phim gốc 5GB sau khi convert ra nhiều độ phân giải có thể t�
 * Không còn CloudFront/Lambda/EventBridge không dùng.
 * Báo cáo có ảnh chứng minh đã kiểm tra chi phí.
 
-{{% notice info %}}
 ![Budget](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.6-Cleanup/5.6.3-cost-check/budget.png)
 ![Cost](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.6-Cleanup/5.6.3-cost-check/cost.png)
-{{% /notice %}}
 
 <!-- NETFLOP_DETAIL_START -->
 #### Cách kiểm tra chi phí

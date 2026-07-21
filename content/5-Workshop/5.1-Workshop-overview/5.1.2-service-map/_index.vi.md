@@ -43,9 +43,7 @@ pre: " <b> 5.1.2. </b> "
 * CloudFront signed cookies giúp hạn chế việc public trực tiếp link HLS.
 * Hướng hoàn thiện bảo mật là giới hạn Security Group của RDS chỉ cho Security Group EC2 truy cập.
 
-{{% notice info %}}
 ![Sơ đồ kiến trúc](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.1-Workshop-overview/sodo.jpg)
-{{% /notice %}}
 
 <!-- NETFLOP_DETAIL_START -->
 #### Cách ánh xạ chức năng với dịch vụ AWS

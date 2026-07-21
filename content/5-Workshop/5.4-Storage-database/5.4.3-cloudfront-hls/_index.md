@@ -22,7 +22,5 @@ Video Player -> CloudFront -> S3 output HLS
 4. Open a movie episode in Netflop.
 5. Confirm the player streams HLS through CloudFront.
 
-{{% notice info %}}
 Image needed: CloudFront distribution, S3 output origin, stream session API, and HLS player.
-{{% /notice %}}
 

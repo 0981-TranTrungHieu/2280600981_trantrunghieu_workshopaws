@@ -29,7 +29,5 @@ pm2 status
 pm2 logs
 ```
 
-{{% notice info %}}
 Image needed: EC2 instance, Security Group, Nginx running, and PM2/backend running.
-{{% /notice %}}
 

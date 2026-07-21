@@ -20,7 +20,5 @@ Admin upload .srt -> S3 input subtitle-input/ -> Lambda -> S3 output subtitles/*
 4. Confirm `.vtt` file appears in S3 output.
 5. Open video player and enable subtitles.
 
-{{% notice info %}}
 Image needed: `.srt` input, Lambda converter logs, `.vtt` output, and subtitles in player.
-{{% /notice %}}
 

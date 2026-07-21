@@ -56,10 +56,8 @@ Các tài nguyên cần kiểm tra:
 * Không còn automation test chạy ngoài ý muốn.
 * CloudFront/Lambda/EventBridge chỉ giữ lại phần đang dùng thật.
 
-{{% notice info %}}
 ![CloudFront](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.4-Storage-database/5.4.3-cloudfront-hls/cloudfront1.png)
 ![MediaConvert](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.4-Storage-database/5.4.2-mediaconvert/mediaconvert.png)
-{{% /notice %}}
 
 <!-- NETFLOP_DETAIL_START -->
 #### Cách cleanup tài nguyên media
