@@ -46,7 +46,9 @@ Không nên để production redirect sang `localhost` hoặc URL EC2 dạng IP 
 3. Kiểm tra API `/api/...` không bị lỗi CORS.
 4. Kiểm tra console browser không còn lỗi mixed content do gọi `http://`.
 
+{{% notice info %}}
 ![DNS record](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.3-AWS-infrastructure/5.3.1-cloudflare-domain/DNSrecord.png)
+{{% /notice %}}
 
 <!-- NETFLOP_DETAIL_START -->
 #### Cách thực hiện DNS trên Cloudflare

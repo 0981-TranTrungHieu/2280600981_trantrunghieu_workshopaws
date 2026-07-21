@@ -68,9 +68,11 @@ Trang quản trị nên hiển thị rõ:
 5. Mở video player và bật phụ đề.
 6. Kiểm tra phụ đề chỉ hiển thị một lớp, không bị trùng trên mobile.
 
+{{% notice info %}}
 ![Input subtitle](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.4-Storage-database/inputsub.png)
 ![Lambda subtitle](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.4-Storage-database/lamda.png)
 ![Output subtitle](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.4-Storage-database/outputsub.png)
+{{% /notice %}}
 
 <!-- NETFLOP_DETAIL_START -->
 #### Cách thực hiện upload và chuyển phụ đề

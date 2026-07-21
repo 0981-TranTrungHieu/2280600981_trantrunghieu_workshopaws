@@ -49,10 +49,12 @@ Topic này dùng để gửi cảnh báo khi CloudWatch alarm chuyển trạng t
 4. Vào SNS console kiểm tra topic `netflop-alerts`.
 5. Kiểm tra Billing Dashboard/AWS Budgets để theo dõi chi phí.
 
+{{% notice info %}}
 ![CloudWatch alarm 1](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.4-monitoring-alerts/cw1.png)
 ![CloudWatch alarm 2](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.4-monitoring-alerts/cw2.png)
 ![SNS](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.4-monitoring-alerts/sns.png)
 ![Console](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.4-monitoring-alerts/console.png)
+{{% /notice %}}
 
 <!-- NETFLOP_DETAIL_START -->
 #### Cách tạo và kiểm tra alarm

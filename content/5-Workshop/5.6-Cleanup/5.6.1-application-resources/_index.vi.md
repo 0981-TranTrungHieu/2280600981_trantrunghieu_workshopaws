@@ -36,7 +36,9 @@ Không xóa RDS production nếu chưa backup. Trước khi dọn:
 * Security Group gọn và an toàn hơn.
 * Database production có backup trước khi thay đổi lớn.
 
+{{% notice info %}}
 ![Cost](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.6-Cleanup/5.6.3-cost-check/cost.png)
+{{% /notice %}}
 
 <!-- NETFLOP_DETAIL_START -->
 #### Cách cleanup tài nguyên ứng dụng

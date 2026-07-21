@@ -25,5 +25,7 @@ netflop-output-source
   |-- subtitles/
 ```
 
+{{% notice info %}}
 Image needed: two S3 buckets, video input object, HLS output, and subtitle output.
+{{% /notice %}}
 

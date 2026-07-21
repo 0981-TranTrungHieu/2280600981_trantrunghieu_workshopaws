@@ -22,5 +22,7 @@ pre: " <b> 5.1.2. </b> "
 | AWS Systems Manager | In use | Deploys/reloads EC2 from local AWS CLI |
 | Amazon Cognito | Configured | Cognito/Google auth needs account/region confirmation |
 
+{{% notice info %}}
 Image needed: AWS services list or Netflop service map.
+{{% /notice %}}
 

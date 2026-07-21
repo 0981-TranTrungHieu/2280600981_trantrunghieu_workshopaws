@@ -27,5 +27,7 @@ pm2 status
 pm2 logs
 ```
 
+{{% notice info %}}
 Image needed: deploy/reload terminal, Nginx status, PM2/backend status, and website after deployment.
+{{% /notice %}}
 

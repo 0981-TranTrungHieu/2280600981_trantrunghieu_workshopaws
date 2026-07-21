@@ -8,8 +8,10 @@ pre: " <b> 5.6. </b> "
 
 Phần cleanup dùng để kiểm tra và dọn các tài nguyên không còn sử dụng sau khi hoàn thành workshop hoặc demo. Với website xem phim, cần đặc biệt chú ý S3 và MediaConvert vì video dung lượng lớn có thể tạo chi phí lưu trữ và xử lý đáng kể.
 
+{{% notice info %}}
 ![Budget](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.6-Cleanup/5.6.3-cost-check/budget.png)
 ![Cost](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.6-Cleanup/5.6.3-cost-check/cost.png)
+{{% /notice %}}
 
 #### Nội dung
 

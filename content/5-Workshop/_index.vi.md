@@ -12,7 +12,9 @@ Phần workshop mô tả quá trình triển khai website xem phim **Netflop** l
 
 Mục tiêu của chương này là trình bày được cách xây dựng một hệ thống xem phim có khả năng upload video dung lượng lớn, tự động chuyển đổi sang HLS nhiều độ phân giải, phát video qua CDN, lưu lịch sử xem theo tài khoản, hỗ trợ phụ đề và theo dõi trạng thái vận hành bằng CloudWatch.
 
+{{% notice info %}}
 ![Sơ đồ kiến trúc](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.1-Workshop-overview/sodo.jpg)
+{{% /notice %}}
 
 #### Nội dung
 

@@ -59,9 +59,11 @@ API này dùng để xử lý một số trường hợp cần proxy media/phụ
 5. Kiểm tra request `/api/stream/session` trả cookie hợp lệ.
 6. Kiểm tra player tải `index.m3u8` và segment qua HTTPS.
 
+{{% notice info %}}
 ![CloudFront](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.4-Storage-database/5.4.3-cloudfront-hls/cloudfront1.png)
 ![CloudFront detail](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.4-Storage-database/5.4.3-cloudfront-hls/cf2.png)
 ![Player](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.4-Storage-database/5.4.3-cloudfront-hls/player1.png)
+{{% /notice %}}
 
 <!-- NETFLOP_DETAIL_START -->
 #### Cách bảo vệ stream bằng signed cookies

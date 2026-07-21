@@ -8,7 +8,9 @@ pre: " <b> 5.2. </b> "
 
 Trước khi triển khai Netflop lên AWS, cần chuẩn bị tài khoản AWS, source code, biến môi trường, database dump và các quyền IAM cần thiết. Đây là bước quan trọng vì hệ thống sử dụng nhiều dịch vụ liên kết với nhau: EC2, RDS, S3, MediaConvert, CloudFront, Lambda, EventBridge và CloudWatch.
 
+{{% notice info %}}
 ![IAM role](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.2-Prerequisite/5.2.1-aws-iam/role.png)
+{{% /notice %}}
 
 #### Nội dung
 
