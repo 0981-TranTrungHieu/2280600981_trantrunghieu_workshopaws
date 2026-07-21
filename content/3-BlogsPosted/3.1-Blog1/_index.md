@@ -5,9 +5,6 @@ weight: 1
 chapter: false
 pre: " <b> 3.1. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
 ![FFmpeg on EC2 compared with AWS Elemental MediaConvert](/2280600981_trantrunghieu_workshopaws/images/3-BlogsPosted/3.1-Blog1/ffmpeg-vs-mediaconvert.svg)
 
