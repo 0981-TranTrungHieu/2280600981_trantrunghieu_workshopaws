@@ -26,9 +26,9 @@ pre: " <b> 5.5.2. </b> "
 * Stream is blocked because signed cookies are not issued correctly.
 * Subtitles do not show because `.vtt` file is missing or path is wrong.
 
-![home](/pic/home.png)
-![watch](/pic/tieptucxem.png)
-![watch](/pic/tieptucxem2.png)
-![play](/pic/moviedetail.png)
-![play](/pic/movie1.png)
+![home](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.2-user-test/home.png)
+![watch](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.2-user-test/tieptucxem.png)
+![watch](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.2-user-test/tieptucxem2.png)
+![play](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.2-user-test/moviedetail.png)
+![play](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.2-user-test/movie1.png)
 

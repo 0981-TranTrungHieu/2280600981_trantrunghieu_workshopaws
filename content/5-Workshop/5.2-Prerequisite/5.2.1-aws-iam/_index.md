@@ -23,7 +23,7 @@ The AWS account needs permissions for EC2, RDS, S3, MediaConvert, CloudFront, La
 | EventBridge | `netflop-mediaconvert-job-state-change` |
 | SNS | `netflop-alerts` |
 
-![role](/pic/role.png)
+![role](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.2-Prerequisite/5.2.1-aws-iam/role.png)
 
 
 

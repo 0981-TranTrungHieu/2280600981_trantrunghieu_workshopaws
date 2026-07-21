@@ -35,6 +35,6 @@ Tài khoản AWS cần có quyền thao tác các dịch vụ:
 * Không đưa access key, secret key, password database hoặc private key vào báo cáo.
 * IAM role cho EC2, Lambda và MediaConvert chỉ nên có quyền đúng nhu cầu.
 
-![role](/pic/role.png)
+![role](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.2-Prerequisite/5.2.1-aws-iam/role.png)
 
 
