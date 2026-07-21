@@ -1,6 +1,6 @@
-﻿---
+---
 title: "Kiểm thử chức năng người dùng"
-date: 2026-07-14
+date: 2026-07-10
 weight: 2
 chapter: false
 pre: " <b> 5.5.2. </b> "
@@ -39,12 +39,12 @@ Các điểm cần kiểm tra riêng:
 
 Người dùng có thể xem phim ổn định trên desktop và điện thoại, không gặp lỗi CORS/mixed content, không lộ raw stream URL trong thông báo lỗi, và dữ liệu cá nhân được tách theo từng tài khoản.
 
-![Homepage](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.2-user-test/home.png)
-![Tiếp tục xem](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.2-user-test/tieptucxem.png)
-![Tiếp tục xem 2](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.2-user-test/tieptucxem2.png)
-![Chi tiết phim](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.2-user-test/moviedetail.png)
-![Movie](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.2-user-test/movie1.png)
-![Player](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.2-user-test/movierun.png)
+![](/2280600178_huynhduybao_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.2-user-test/home.png)
+![](/2280600178_huynhduybao_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.2-user-test/tieptucxem.png)
+![](/2280600178_huynhduybao_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.2-user-test/tieptucxem2.png)
+![](/2280600178_huynhduybao_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.2-user-test/moviedetail.png)
+![](/2280600178_huynhduybao_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.2-user-test/movie1.png)
+![](/2280600178_huynhduybao_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.2-user-test/movierun.png)
 
 <!-- NETFLOP_DETAIL_START -->
 #### Cách thực hiện chức năng tiếp tục xem
@@ -91,3 +91,48 @@ await pool.execute(
 6. Bấm Tiếp tục xem ở tài khoản A và xác nhận player nhảy đúng thời điểm đã lưu.
 <!-- NETFLOP_DETAIL_END -->
 
+<!-- NETFLOP_IMPLEMENTATION_START -->
+#### Kiểm thử người dùng
+
+Luồng user cần chứng minh website không chỉ hiển thị phim mà còn lưu trạng thái theo từng tài khoản:
+
+1. Đăng ký hoặc đăng nhập.
+2. Mở một phim có nhiều tập.
+3. Xem vài phút rồi thoát.
+4. Vào Hồ sơ cá nhân -> Tiếp tục xem hoặc Lịch sử xem.
+5. Đăng nhập tài khoản khác để kiểm tra dữ liệu không bị dùng chung.
+
+#### Code frontend lưu tiến trình xem
+
+~~~js
+const watchedSeconds = Math.max(0, Math.floor(Number(progress?.currentTime || 0)));
+
+movieApi.saveHistory(movie.id, {
+  episodeId: selectedEpisode?.id || null,
+  watchedSeconds
+}).catch(() => {});
+~~~
+
+#### Code backend lưu theo user
+
+~~~js
+await pool.execute(
+  'INSERT INTO lichsu (UserID, TenDN, MaPhim, MaTap, ThoiGianXem, ThoiGian) VALUES (:userId, :username, :movieId, :episodeId, :watchedSeconds, NOW()) ON DUPLICATE KEY UPDATE MaTap = VALUES(MaTap), ThoiGianXem = VALUES(ThoiGianXem), ThoiGian = VALUES(ThoiGian)',
+  {
+    userId: user.id,
+    username: user.ten_dang_nhap,
+    movieId,
+    episodeId,
+    watchedSeconds
+  }
+);
+~~~
+
+#### Kết quả mong đợi
+
+* Tài khoản A xem phim thì lịch sử chỉ hiện ở tài khoản A.
+* Tài khoản B không thấy tiếp tục xem của tài khoản A.
+* Khi bấm tiếp tục xem, player seek về thời điểm đã lưu.
+
+
+<!-- NETFLOP_IMPLEMENTATION_END -->

@@ -1,6 +1,6 @@
-﻿---
+---
 title: "Cấu hình S3 input/output buckets"
-date: 2026-07-13
+date: 2026-07-10
 weight: 1
 chapter: false
 pre: " <b> 5.4.1. </b> "
@@ -63,8 +63,8 @@ aws s3 ls s3://netflop-input-source
 aws s3 ls s3://netflop-output-source
 ```
 
-![S3 input](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.4-Storage-database/5.4.1-s3-buckets/s3input.png)
-![S3 output](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.4-Storage-database/5.4.1-s3-buckets/s3ouput.png)
+![](/2280600178_huynhduybao_workshopaws/images/5-Workshop/5.4-Storage-database/5.4.1-s3-buckets/s3input.png)
+![](/2280600178_huynhduybao_workshopaws/images/5-Workshop/5.4-Storage-database/5.4.1-s3-buckets/s3ouput.png)
 
 <!-- NETFLOP_DETAIL_START -->
 #### Cách thực hiện upload lên S3
@@ -115,3 +115,58 @@ async function createVideoMultipartUpload({ movieId, episodeName, originalName, 
 4. Kiểm tra HLS output, ảnh banner, avatar và phụ đề.
 <!-- NETFLOP_DETAIL_END -->
 
+<!-- NETFLOP_IMPLEMENTATION_START -->
+#### Cấu trúc S3 bucket
+
+Netflop dùng hai bucket:
+
+* <code>netflop-input-source</code>: chứa video gốc và SRT source.
+* <code>netflop-output-source</code>: chứa HLS output, phụ đề VTT, avatar/banner nếu cấu hình upload media public.
+
+#### Prefix đề xuất
+
+~~~text
+uploads/videos/{movieId}/{timestamp}-{filename}
+movies/{movieId}/episodes/{episodeId}/hls/index.m3u8
+movies/{movieId}/episodes/{episodeId}/hls/*.ts
+subtitle-input/episodes/{episodeId}/{lang}/{file}.srt
+subtitles/episodes/{episodeId}/{lang}/{file}.vtt
+avatars/users/{userId}/{file}
+episode-banners/{file}
+~~~
+
+#### Code upload object lên S3
+
+~~~js
+await s3.send(new PutObjectCommand({
+  Bucket: bucket,
+  Key: key,
+  Body: file.buffer,
+  ContentType: file.mimetype || 'application/octet-stream',
+  Metadata: metadata
+}));
+~~~
+
+#### Code multipart upload cho video lớn
+
+~~~js
+const part = await awsS3Service.uploadVideoPart({
+  key,
+  uploadId,
+  partNumber,
+  body: req.file.buffer
+});
+
+const uploaded = await awsS3Service.completeVideoMultipartUpload({
+  key,
+  uploadId,
+  parts
+});
+~~~
+
+#### Vì sao cần multipart
+
+Upload phim 5GB qua một request dễ bị lỗi <code>413 Request Entity Too Large</code> hoặc timeout. Multipart upload chia file thành nhiều phần nhỏ, có thể retry từng part và hiển thị tiến trình chính xác hơn trên admin.
+
+
+<!-- NETFLOP_IMPLEMENTATION_END -->

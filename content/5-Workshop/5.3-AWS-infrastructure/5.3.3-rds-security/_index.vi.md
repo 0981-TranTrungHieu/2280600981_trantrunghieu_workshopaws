@@ -1,6 +1,6 @@
-﻿---
+---
 title: "Cấu hình RDS và Security Group"
-date: 2026-07-12
+date: 2026-07-10
 weight: 3
 chapter: false
 pre: " <b> 5.3.3. </b> "
@@ -61,8 +61,6 @@ curl https://netflop.win/api/movies?limit=12
 
 Nếu API trả dữ liệu phim/thể loại bình thường, backend đã kết nối RDS thành công.
 
-![RDS](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.3-AWS-infrastructure/rds.png)
-
 <!-- NETFLOP_DETAIL_START -->
 #### Cách tạo và import RDS
 
@@ -111,3 +109,49 @@ curl https://netflop.win/api/catalog/genres
 Nếu API trả danh sách phim/thể loại, backend đã đọc dữ liệu từ RDS thành công.
 <!-- NETFLOP_DETAIL_END -->
 
+<!-- NETFLOP_IMPLEMENTATION_START -->
+#### Tạo RDS MySQL cho Netflop
+
+Database production dùng RDS MySQL, database name là <code>web_xem_phim_final</code>. RDS lưu dữ liệu người dùng, phim, tập phim, phụ đề, lịch sử xem, bình luận và đánh giá.
+
+#### Các bước tạo và bảo vệ RDS
+
+1. Chọn engine MySQL.
+2. Chọn instance nhỏ phù hợp giai đoạn demo, ví dụ <code>db.t4g.micro</code>.
+3. Đặt DB identifier <code>netflop-db</code>.
+4. Tạo database <code>web_xem_phim_final</code>.
+5. Chọn VPC cùng EC2.
+6. Security Group của RDS chỉ mở port 3306 cho Security Group của EC2.
+7. Không mở 3306 public cho mọi IP khi chạy production.
+
+#### Import database local lên RDS
+
+~~~bash
+mysql -h netflop-db.xxxxxx.ap-southeast-1.rds.amazonaws.com \
+  -u admin -p web_xem_phim_final < database/web_xem_phim_final_dump.sql
+~~~
+
+#### Code backend kết nối RDS
+
+~~~js
+const pool = mysql.createPool({
+  host: env.db.host,
+  port: env.db.port,
+  database: env.db.database,
+  user: env.db.user,
+  password: env.db.password,
+  waitForConnections: true,
+  connectionLimit: env.db.connectionLimit,
+  charset: 'utf8mb4',
+  namedPlaceholders: true
+});
+~~~
+
+#### Kiểm tra sau import
+
+1. Backend khởi động không báo lỗi database.
+2. Trang chủ trả danh sách phim.
+3. Đăng nhập/đăng ký hoạt động.
+4. Admin thấy danh sách phim/tập phim.
+
+<!-- NETFLOP_IMPLEMENTATION_END -->

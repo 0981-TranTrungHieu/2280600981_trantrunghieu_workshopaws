@@ -1,6 +1,6 @@
-﻿---
+---
 title: "Kiểm thử admin upload video"
-date: 2026-07-14
+date: 2026-07-10
 weight: 3
 chapter: false
 pre: " <b> 5.5.3. </b> "
@@ -58,11 +58,11 @@ Với video khoảng 5GB, cần xác nhận:
 * Người dùng phát được video qua CloudFront.
 * Admin nhìn thấy tiến trình và kết quả hoàn thành ngay trên UI.
 
-![Admin input](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.3-admin-upload-video/adminin1.png)
-![Admin upload](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.3-admin-upload-video/adminput1.png)
-![Upload progress](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.3-admin-upload-video/adminup1.png)
-![Upload processing](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.3-admin-upload-video/adminup2.png)
-![Upload complete](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.3-admin-upload-video/adminup3.png)
+![](/2280600178_huynhduybao_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.3-admin-upload-video/adminin1.png)
+![](/2280600178_huynhduybao_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.3-admin-upload-video/adminput1.png)
+![](/2280600178_huynhduybao_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.3-admin-upload-video/adminup1.png)
+![](/2280600178_huynhduybao_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.3-admin-upload-video/adminup2.png)
+![](/2280600178_huynhduybao_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.3-admin-upload-video/adminup3.png)
 
 <!-- NETFLOP_DETAIL_START -->
 #### Cách thực hiện upload tập phim trong admin
@@ -128,3 +128,79 @@ const job = await mediaConvertService.createHlsJob({
 7. Mở web người dùng và phát tập vừa upload.
 <!-- NETFLOP_DETAIL_END -->
 
+<!-- NETFLOP_IMPLEMENTATION_START -->
+#### Kiểm thử admin upload tập phim
+
+Đây là chức năng quan trọng nhất của workshop vì kết hợp frontend, backend, S3, MediaConvert, Lambda và CloudFront.
+
+#### Các bước thao tác trên giao diện
+
+1. Đăng nhập bằng tài khoản admin.
+2. Vào trang quản lý tập phim hoặc phần Video & Trailer trong thêm/sửa phim.
+3. Nhập ID phim, tên tập, banner tập nếu có.
+4. Chọn file MP4/MKV.
+5. Bấm tải video.
+6. Theo dõi thanh tiến trình upload multipart.
+7. Sau khi upload xong, trạng thái chuyển sang MediaConvert processing.
+8. Khi job hoàn tất, trạng thái tập phim là đã hoàn thành/ready.
+9. Mở trang watch để phát tập mới.
+
+#### Code frontend upload theo chunk
+
+~~~js
+for (let offset = 0, partNumber = 1; offset < file.size; offset += CHUNK_SIZE, partNumber += 1) {
+  const end = Math.min(offset + CHUNK_SIZE, file.size);
+  const chunk = file.slice(offset, end);
+  const formData = new FormData();
+  formData.append('key', uploadSession.key);
+  formData.append('uploadId', uploadSession.uploadId);
+  formData.append('partNumber', String(partNumber));
+  formData.append('chunk', chunk, file.name);
+
+  const response = await uploadPartWithRetry(formData, {
+    onUploadProgress: (event) => {
+      const percent = ((uploadedBytes + event.loaded) / file.size) * 100;
+      onProgress(Math.min(99, Math.max(1, percent)));
+    }
+  });
+}
+~~~
+
+#### Code backend complete multipart và tạo job
+
+~~~js
+const uploaded = await awsS3Service.completeVideoMultipartUpload({ key, uploadId, parts });
+
+const pendingEpisode = await episodeModel.createUploadEpisode({
+  movieId,
+  name: episodeName,
+  sourceUrl: uploaded.s3Uri,
+  uploadStatus: 'uploaded'
+});
+
+const job = await mediaConvertService.createHlsJob({
+  inputS3Uri: uploaded.s3Uri,
+  movieId,
+  episodeId: pendingEpisode.MaTap
+});
+~~~
+
+#### Vì sao không cần bấm Sync thủ công
+
+MediaConvert phát sự kiện trạng thái qua EventBridge. Lambda <code>netflop-mediaconvert-notifier</code> nhận event rồi gọi webhook backend <code>/api/uploads/mediaconvert/events</code>. Backend dựa vào jobId/episodeId để cập nhật trạng thái tập phim.
+
+#### Code Lambda notifier
+
+~~~js
+const response = await fetch(webhookUrl, {
+  method: 'POST',
+  headers: {
+    'content-type': 'application/json',
+    'x-netflop-event-secret': secret
+  },
+  body: JSON.stringify(event)
+});
+~~~
+
+
+<!-- NETFLOP_IMPLEMENTATION_END -->

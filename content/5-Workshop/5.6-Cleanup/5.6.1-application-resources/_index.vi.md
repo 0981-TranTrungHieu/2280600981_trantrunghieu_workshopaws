@@ -1,6 +1,6 @@
-﻿---
+---
 title: "Dọn dẹp tài nguyên ứng dụng"
-date: 2026-07-15
+date: 2026-07-10
 weight: 1
 chapter: false
 pre: " <b> 5.6.1. </b> "
@@ -36,8 +36,6 @@ Không xóa RDS production nếu chưa backup. Trước khi dọn:
 * Security Group gọn và an toàn hơn.
 * Database production có backup trước khi thay đổi lớn.
 
-![Cost](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.6-Cleanup/5.6.3-cost-check/cost.png)
-
 <!-- NETFLOP_DETAIL_START -->
 #### Cách cleanup tài nguyên ứng dụng
 
@@ -70,3 +68,34 @@ aws rds create-db-snapshot \
 Không xóa RDS nếu chưa có snapshot hoặc chưa export dữ liệu cần giữ.
 <!-- NETFLOP_DETAIL_END -->
 
+<!-- NETFLOP_IMPLEMENTATION_START -->
+#### Dọn dẹp tài nguyên application
+
+Nếu chỉ nghỉ tạm thời, nên stop backend/frontend local và có thể stop EC2. Nếu môi trường demo đã kết thúc, mới terminate EC2.
+
+#### Lệnh trên EC2
+
+~~~bash
+pm2 status
+pm2 stop netflop-api
+sudo systemctl stop nginx
+~~~
+
+#### Stop EC2 bằng CLI
+
+~~~bash
+aws ec2 stop-instances --instance-ids i-xxxxxxxxxxxxxxxxx --region ap-southeast-1
+~~~
+
+#### RDS
+
+Trước khi xóa RDS, tạo snapshot:
+
+~~~bash
+aws rds create-db-snapshot \
+  --db-instance-identifier netflop-db \
+  --db-snapshot-identifier netflop-db-before-cleanup
+~~~
+
+
+<!-- NETFLOP_IMPLEMENTATION_END -->

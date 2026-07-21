@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Kiến trúc tổng quan"
 date: 2026-07-10
 weight: 1
@@ -98,7 +98,7 @@ Lambda chuyển .srt sang .vtt nếu cần
 Video Player load subtitle track
 ```
 
-![Sơ đồ kiến trúc](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.1-Workshop-overview/5.1.1-architecture/sodo.jpg)
+![](/2280600178_huynhduybao_workshopaws/images/5-Workshop/5.1-Workshop-overview/5.1.1-architecture/sodo.jpg)
 
 <!-- NETFLOP_DETAIL_START -->
 #### Cách thực hiện kiến trúc
@@ -144,3 +144,61 @@ const job = await mediaConvertService.createHlsJob({
 ~~~
 <!-- NETFLOP_DETAIL_END -->
 
+<!-- NETFLOP_IMPLEMENTATION_START -->
+#### Kiến trúc triển khai theo project Netflop
+
+Kiến trúc hiện tại vẫn là mô hình web truyền thống chạy trên EC2, kết hợp các dịch vụ managed của AWS cho database, media, CDN và monitoring. Backend Node.js không lưu file video lớn trên ổ đĩa EC2, mà chỉ điều phối upload và lưu metadata vào RDS.
+
+#### Luồng request chính
+
+1. Người dùng truy cập <code>netflop.win</code> qua Cloudflare.
+2. Nginx trên EC2 phục vụ frontend React đã build.
+3. Các request <code>/api/*</code> được reverse proxy về Node.js backend chạy bằng PM2.
+4. Backend đọc/ghi dữ liệu phim, người dùng, tập phim, lịch sử xem trong RDS MySQL.
+5. Video admin upload đi vào S3 input bucket.
+6. Backend tạo MediaConvert job để xuất HLS sang S3 output bucket.
+7. Player phát HLS qua CloudFront, có thể bảo vệ bằng signed cookies.
+
+#### Sơ đồ luồng upload và xem phim
+
+~~~text
+Admin browser
+  -> React admin
+  -> Backend API /uploads/videos/multipart/*
+  -> S3 input bucket
+  -> MediaConvert
+  -> S3 output bucket
+  -> CloudFront
+  -> Video player
+~~~
+
+#### File source thể hiện kiến trúc
+
+| Mục | File |
+| --- | --- |
+| Khởi tạo server | <code>backend/src/server.js</code> |
+| Route tổng | <code>backend/src/routes/index.js</code> |
+| Kết nối RDS | <code>backend/src/config/database.js</code> |
+| Upload S3 | <code>backend/src/services/awsS3.service.js</code> |
+| Tạo MediaConvert job | <code>backend/src/services/mediaConvert.service.js</code> |
+| Player HLS | <code>frontend/src/components/VideoPlayer.jsx</code> |
+
+#### Code mẫu kết nối database
+
+~~~js
+const pool = mysql.createPool({
+  host: env.db.host,
+  port: env.db.port,
+  database: env.db.database,
+  user: env.db.user,
+  password: env.db.password,
+  waitForConnections: true,
+  connectionLimit: env.db.connectionLimit,
+  charset: 'utf8mb4',
+  namedPlaceholders: true
+});
+
+pool.execute = pool.query.bind(pool);
+~~~
+
+<!-- NETFLOP_IMPLEMENTATION_END -->
