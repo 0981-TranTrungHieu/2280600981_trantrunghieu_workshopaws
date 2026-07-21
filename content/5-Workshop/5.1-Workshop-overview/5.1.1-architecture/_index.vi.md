@@ -99,7 +99,7 @@ Video Player load subtitle track
 ```
 
 {{% notice info %}}
-Cần thêm ảnh: sơ đồ luồng truy cập chính; sơ đồ upload video -> MediaConvert -> CloudFront; sơ đồ EventBridge -> Lambda -> Backend webhook; sơ đồ phụ đề SRT -> VTT.
+![Sơ đồ kiến trúc](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.1-Workshop-overview/5.1.1-architecture/sodo.jpg)
 {{% /notice %}}
 
 <!-- NETFLOP_DETAIL_START -->

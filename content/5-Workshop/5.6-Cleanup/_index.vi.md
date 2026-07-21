@@ -9,7 +9,8 @@ pre: " <b> 5.6. </b> "
 Phần cleanup dùng để kiểm tra và dọn các tài nguyên không còn sử dụng sau khi hoàn thành workshop hoặc demo. Với website xem phim, cần đặc biệt chú ý S3 và MediaConvert vì video dung lượng lớn có thể tạo chi phí lưu trữ và xử lý đáng kể.
 
 {{% notice info %}}
-Cần thêm ảnh: danh sách tài nguyên AWS cần giữ/xóa, S3 storage usage, CloudFront distribution, RDS snapshot và Billing Dashboard sau khi cleanup.
+![Budget](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.6-Cleanup/5.6.3-cost-check/budget.png)
+![Cost](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.6-Cleanup/5.6.3-cost-check/cost.png)
 {{% /notice %}}
 
 #### Nội dung

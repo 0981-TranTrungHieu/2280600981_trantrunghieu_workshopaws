@@ -48,7 +48,8 @@ Một phim gốc 5GB sau khi convert ra nhiều độ phân giải có thể t�
 * Báo cáo có ảnh chứng minh đã kiểm tra chi phí.
 
 {{% notice info %}}
-Cần thêm ảnh: Billing Dashboard, Cost Explorer theo service, AWS Budgets và bảng thống kê chi phí sau khi upload/convert video demo.
+![Budget](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.6-Cleanup/5.6.3-cost-check/budget.png)
+![Cost](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.6-Cleanup/5.6.3-cost-check/cost.png)
 {{% /notice %}}
 
 <!-- NETFLOP_DETAIL_START -->

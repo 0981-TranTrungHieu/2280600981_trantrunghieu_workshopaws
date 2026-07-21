@@ -9,7 +9,9 @@ pre: " <b> 5.5. </b> "
 Phần này mô tả quy trình deploy Netflop lên EC2 và kiểm thử các chức năng chính sau khi hệ thống chạy ở domain production. Các bước kiểm thử cần bao phủ cả người dùng cuối, admin upload video và monitoring.
 
 {{% notice info %}}
-Cần thêm ảnh: terminal deploy/reload thành công, homepage production, trang xem phim trên desktop/mobile, trang admin upload video, CloudWatch alarms trạng thái OK.
+![PM2 status](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.1-deploy-ssm/pm2%20status.png)
+![Homepage](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.2-user-test/home.png)
+![CloudWatch](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.4-monitoring-alerts/cw1.png)
 {{% /notice %}}
 
 #### Nội dung

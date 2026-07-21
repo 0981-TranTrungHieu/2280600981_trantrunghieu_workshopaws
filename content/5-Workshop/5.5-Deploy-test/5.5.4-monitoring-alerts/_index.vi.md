@@ -50,7 +50,10 @@ Topic này dùng để gửi cảnh báo khi CloudWatch alarm chuyển trạng t
 5. Kiểm tra Billing Dashboard/AWS Budgets để theo dõi chi phí.
 
 {{% notice info %}}
-Cần thêm ảnh: CloudWatch alarms trạng thái OK, Lambda logs, SNS topic `netflop-alerts`, email subscription đã Confirmed và Billing Dashboard/Cost Explorer.
+![CloudWatch alarm 1](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.4-monitoring-alerts/cw1.png)
+![CloudWatch alarm 2](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.4-monitoring-alerts/cw2.png)
+![SNS](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.4-monitoring-alerts/sns.png)
+![Console](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.5-Deploy-test/5.5.4-monitoring-alerts/console.png)
 {{% /notice %}}
 
 <!-- NETFLOP_DETAIL_START -->

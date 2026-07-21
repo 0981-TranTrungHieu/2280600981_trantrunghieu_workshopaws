@@ -69,7 +69,9 @@ Trang quản trị nên hiển thị rõ:
 6. Kiểm tra phụ đề chỉ hiển thị một lớp, không bị trùng trên mobile.
 
 {{% notice info %}}
-Cần thêm ảnh: admin upload phụ đề, file `.srt` input, S3 trigger, Lambda log, file `.vtt` output và phụ đề hiển thị đúng trên player desktop/mobile.
+![Input subtitle](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.4-Storage-database/inputsub.png)
+![Lambda subtitle](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.4-Storage-database/lamda.png)
+![Output subtitle](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.4-Storage-database/outputsub.png)
 {{% /notice %}}
 
 <!-- NETFLOP_DETAIL_START -->

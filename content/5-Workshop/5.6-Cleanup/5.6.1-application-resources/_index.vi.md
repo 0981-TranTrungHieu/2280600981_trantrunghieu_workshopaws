@@ -37,7 +37,7 @@ Không xóa RDS production nếu chưa backup. Trước khi dọn:
 * Database production có backup trước khi thay đổi lớn.
 
 {{% notice info %}}
-Cần thêm ảnh: EC2 instance list, EBS volumes, Elastic IP, Security Group inbound, RDS snapshot và IAM access key đã vô hiệu hóa nếu không dùng.
+![Cost](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.6-Cleanup/5.6.3-cost-check/cost.png)
 {{% /notice %}}
 
 <!-- NETFLOP_DETAIL_START -->

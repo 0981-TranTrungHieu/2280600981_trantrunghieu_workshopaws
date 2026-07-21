@@ -74,7 +74,8 @@ Frontend admin hiển thị thanh tiến trình theo các giai đoạn: upload l
 5. Mở tập phim trên web để kiểm tra player.
 
 {{% notice info %}}
-Cần thêm ảnh: MediaConvert job detail, input S3 path, output HLS path, job status COMPLETE và thanh tiến trình upload/convert trong admin.
+![MediaConvert](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.4-Storage-database/5.4.2-mediaconvert/mediaconvert.png)
+![HLS output](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.4-Storage-database/5.4.2-mediaconvert/hls.png)
 {{% /notice %}}
 
 <!-- NETFLOP_DETAIL_START -->

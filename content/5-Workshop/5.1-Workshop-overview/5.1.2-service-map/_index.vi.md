@@ -44,7 +44,7 @@ pre: " <b> 5.1.2. </b> "
 * Hướng hoàn thiện bảo mật là giới hạn Security Group của RDS chỉ cho Security Group EC2 truy cập.
 
 {{% notice info %}}
-Cần thêm ảnh: bảng dịch vụ AWS đang dùng, sơ đồ service map, hoặc ảnh AWS Console hiển thị EC2/RDS/S3/CloudFront/Lambda/CloudWatch.
+![Sơ đồ kiến trúc](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.1-Workshop-overview/sodo.jpg)
 {{% /notice %}}
 
 <!-- NETFLOP_DETAIL_START -->

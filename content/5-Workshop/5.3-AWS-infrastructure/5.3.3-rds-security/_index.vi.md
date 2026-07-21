@@ -62,7 +62,7 @@ curl https://netflop.win/api/movies?limit=12
 Nếu API trả dữ liệu phim/thể loại bình thường, backend đã kết nối RDS thành công.
 
 {{% notice info %}}
-Cần thêm ảnh: RDS `netflop-db` trạng thái Available, endpoint RDS, Security Group inbound chỉ cho EC2, kết quả import database và API trả dữ liệu.
+![RDS](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.3-AWS-infrastructure/rds.png)
 {{% /notice %}}
 
 <!-- NETFLOP_DETAIL_START -->

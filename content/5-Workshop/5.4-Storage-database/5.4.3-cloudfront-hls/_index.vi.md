@@ -60,7 +60,9 @@ API này dùng để xử lý một số trường hợp cần proxy media/phụ
 6. Kiểm tra player tải `index.m3u8` và segment qua HTTPS.
 
 {{% notice info %}}
-Cần thêm ảnh: CloudFront distribution, origin S3 output, behavior/cookie policy nếu có, request `/api/stream/session`, video player phát HLS thành công và console không lộ raw S3 URL trong thông báo lỗi.
+![CloudFront](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.4-Storage-database/5.4.3-cloudfront-hls/cloudfront1.png)
+![CloudFront detail](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.4-Storage-database/5.4.3-cloudfront-hls/cf2.png)
+![Player](/2280600981_trantrunghieu_workshopaws/images/5-Workshop/5.4-Storage-database/5.4.3-cloudfront-hls/player1.png)
 {{% /notice %}}
 
 <!-- NETFLOP_DETAIL_START -->
