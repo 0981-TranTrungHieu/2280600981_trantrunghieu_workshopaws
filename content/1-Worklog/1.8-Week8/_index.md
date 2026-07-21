@@ -1,57 +1,31 @@
----
+﻿---
 title: "Week 8 Worklog"
-date: 2024-01-01
-weight: 1
+date: 2026-06-05
+weight: 8
 chapter: false
 pre: " <b> 1.8. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
+
+### Topic: Integrate admin media upload to S3
+
+### Week Objectives
+
+* Allow admin to upload videos, images, and subtitles to S3 instead of EC2.
+* Prepare metadata for backend MediaConvert jobs.
+
+### Work Completed
+
+| Day | Work | Result | Reference |
+| --- | --- | --- | --- |
+| 1 | Studied AWS SDK for JavaScript v3 with S3 client | Backend could call S3 APIs | AWS SDK JS v3 S3: <https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/javascript_s3_code_examples.html> |
+| 2 | Integrated poster, avatar, and banner uploads to S3 output | Images were stored on S3 and URLs saved in database | S3 PutObject: <https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html> |
+| 3 | Designed multipart upload for large videos | Avoided timeout issues for large video uploads | S3 Multipart Upload: <https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html> |
+| 4 | Saved episode metadata: S3 input path, upload status, movieId, episodeId | Prepared input for MediaConvert | Express Middleware: <https://expressjs.com/en/resources/middleware.html> |
+
+### Achievements
+
+* Built the admin media upload flow to S3.
+* Backend stored file information and processing status.
+* Reduced dependency on EC2 disk for large videos.
 
 
-### Week 8 Objectives:
-
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
-
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
-
-### Week 8 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...

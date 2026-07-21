@@ -1,31 +1,39 @@
----
+﻿---
 title: "Blog 2"
-date: 2024-01-01
+date: 2026-06-22
 weight: 1
 chapter: false
 pre: " <b> 3.2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
+# A Small Experience from Building a Movie Streaming Website on AWS
 
-# SESSION POLICIES IN AMAZON EKS POD IDENTITY
+Hello everyone,
 
-Amazon EKS Pod Identity has recently added the session policies feature, allowing you to narrow IAM permissions flexibly and precisely for each pod without needing to create many separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+During the development of **Netflop**, our team once asked an important question:
 
-Key points to know:
+**Why not serve videos directly from Amazon S3 instead of using Amazon CloudFront?**
 
-* A session policy is an inline IAM policy specified when creating or updating a Pod Identity association.
-* Effective permissions = intersection between the IAM role permissions and the session policy → the session policy can only narrow permissions, not expand them.
-* Helps avoid over-permissioning when reusing a single IAM role for multiple workloads with different needs.
-* Supports both same-account and cross-account (via IAM role chaining).
-* Significantly reduces the number of IAM roles that need to be managed, helping avoid hitting IAM quota limits in large clusters.
-* Easily configured through the AWS Management Console, AWS CLI, or AWS SDK when creating an association between a Kubernetes ServiceAccount and an IAM role.
+After researching and implementing the solution in practice, we found that CloudFront provides many useful benefits.
 
-This feature is especially useful when you have many applications running on the same IAM role but need different permission restrictions (for example: one pod only reads a specific S3 bucket, another pod only calls certain APIs).
+Instead of allowing users to access S3 directly, all **HLS** video content is delivered through **Amazon CloudFront**.
 
-...Image...
+Some benefits our team observed include:
 
-...Link...
+- Lower latency when users watch videos.
+- Faster loading thanks to caching at Edge Locations.
+- Fewer direct requests to S3.
+- Built-in HTTPS support.
+- The ability to protect content with **CloudFront Signed Cookies**, so only authenticated users can watch videos.
 
-...Guide...
+For websites with a large amount of media content, such as movie streaming platforms or online learning systems, CloudFront is definitely a service worth exploring.
+
+When building streaming systems, do you usually use **CloudFront**, direct **S3 access**, or another CDN? We would love to learn from your experience.
+
+## References
+
+- [Amazon CloudFront](https://aws.amazon.com/cloudfront/)
+- [What is Amazon CloudFront?](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html)
+- [Serving private content with signed URLs and signed cookies](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html)
+- [Use signed cookies](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-signed-cookies.html)
+
+

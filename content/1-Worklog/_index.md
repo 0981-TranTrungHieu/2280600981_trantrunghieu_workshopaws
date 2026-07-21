@@ -1,39 +1,39 @@
----
+﻿---
 title: "Worklog"
-date: 2024-01-01
+date: 2026-04-17
 weight: 1
 chapter: false
 pre: " <b> 1. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
+This worklog records my 12-week implementation journey for **Netflop - Movie Streaming Website on AWS**. The roadmap starts from AWS fundamentals and infrastructure preparation, then moves to application deployment, database/media pipeline integration, testing, monitoring, cleanup, and final documentation.
 
-**On this page**, you will need to introduce your worklog. **How** did you complete it? How many weeks did you take to complete the program? **What** did you do in those weeks?
+**Week 1:** [Project orientation, AWS fundamentals, and AWS account setup](1.1-week1/)
 
-Typically, and as a standard, a worklog is carried out over about 3 months (throughout the internship period) with weekly contents as follows:
+**Week 2:** [IAM, AWS CLI, account security, and cost control](1.2-week2/)
 
-**Week 1:** [Getting familiar with AWS and basic AWS services](1.1-week1/)
+**Week 3:** [VPC, Security Groups, and EC2 network design](1.3-week3/)
 
-**Week 2:** [Doing task A...](1.2-week2/)
+**Week 4:** [Deploy EC2, Nginx, Node.js API, and React frontend](1.4-week4/)
 
-**Week 3:** [Doing task B...](1.3-week3/)
+**Week 5:** [Database design and Amazon RDS MySQL deployment](1.5-week5/)
 
-**Week 4:** [Doing task C...](1.4-week4/)
+**Week 6:** [S3 input/output design for videos, images, and subtitles](1.6-week6/)
 
-**Week 5:** [Doing task D...](1.5-week5/)
+**Week 7:** [Analyze Netflop features and frontend/backend flow](1.7-week7/)
 
-**Week 6:** [Doing task E...](1.6-week6/)
+**Week 8:** [Integrate admin media upload to S3](1.8-week8/)
 
-**Week 7:** [Doing task G...](1.7-week7/)
+**Week 9:** [Integrate AWS Elemental MediaConvert for HLS video processing](1.9-week9/)
 
-**Week 8:** [Doing task H...](1.8-week8/)
+**Week 10:** [Deliver video with CloudFront and protect streams](1.10-week10/)
 
-**Week 9:** [Doing task I...](1.9-week9/)
+**Week 11:** [Automation with Lambda, EventBridge, and subtitle processing](1.11-week11/)
 
-**Week 10:** [Doing task L...](1.10-week10/)
+**Week 12:** [Monitoring, testing, cleanup, and final report](1.12-week12/)
 
-**Week 11:** [Doing task M...](1.11-week11/)
+### GitHub
 
-**Week 12:** [Doing task N...](1.12-week12/)
+<https://github.com/Danh0104/Web-xem-phim-Netflop.git>
+
+

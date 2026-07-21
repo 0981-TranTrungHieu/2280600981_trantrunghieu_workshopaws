@@ -1,59 +1,30 @@
----
+﻿---
 title: "Worklog Tuần 8"
-date: 2024-01-01
-weight: 1
+date: 2026-06-05
+weight: 8
 chapter: false
 pre: " <b> 1.8. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Chủ đề: Tích hợp upload media từ admin lên S3
 
-### Mục tiêu tuần 8:
+### Mục tiêu tuần 8
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Cho phép admin upload video, ảnh và phụ đề lên S3 thay vì lưu trên EC2.
+* Chuẩn bị metadata để backend tạo MediaConvert job.
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Công việc đã thực hiện
 
+| Ngày | Công việc | Kết quả | Nguồn tài liệu |
+| --- | --- | --- | --- |
+| 1 | Tìm hiểu AWS SDK for JavaScript v3 với S3 client | Backend có thể gọi S3 API | AWS SDK JS v3 S3: <https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/javascript_s3_code_examples.html> |
+| 2 | Tích hợp upload poster, avatar và banner lên S3 output | File ảnh lưu trên S3, database lưu URL | S3 PutObject: <https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html> |
+| 3 | Thiết kế multipart upload cho video lớn | Tránh lỗi timeout khi upload video dung lượng cao | S3 Multipart Upload: <https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html> |
+| 4 | Lưu metadata tập phim: S3 input path, trạng thái upload, movieId, episodeId | Chuẩn bị input cho MediaConvert | Express File Upload Patterns: <https://expressjs.com/en/resources/middleware.html> |
 
-### Kết quả đạt được tuần 8:
+### Kết quả đạt được
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
+* Admin có luồng upload media lên S3.
+* Backend lưu được thông tin file và trạng thái xử lý.
+* Giảm phụ thuộc vào ổ đĩa EC2 khi xử lý video lớn.
 
