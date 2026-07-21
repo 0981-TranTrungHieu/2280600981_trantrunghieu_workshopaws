@@ -27,7 +27,9 @@ chapter: false
 
 &emsp; **Internship Duration:** From 17/04/2026 to 17/07/2026
 
-![alt text](image-1.png)
+<p align="center">
+  <img src="image-1.png" alt="Tran Trung Hieu" style="max-width: 320px; width: 100%; height: auto;">
+</p>
 
 ### Report Content
 
