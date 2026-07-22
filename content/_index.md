@@ -28,7 +28,7 @@ chapter: false
 &emsp; **Internship Duration:** From 17/04/2026 to 17/07/2026
 
 <p align="center">
-  <img src="image-1.png" alt="Tran Trung Hieu" style="max-width: 320px; width: 100%; height: auto;">
+  <img src="https://0981-trantrunghieu.github.io/2280600981_trantrunghieu_workshopaws/images/avatar.png" alt="Tran Trung Hieu" style="max-width: 320px; width: 100%; height: auto;">
 </p>
 
 ### Report Content
