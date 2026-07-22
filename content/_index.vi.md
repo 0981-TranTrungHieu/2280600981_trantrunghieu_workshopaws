@@ -26,7 +26,7 @@ chapter: false
 &emsp; **Thời gian thực tập:** Từ ngày 17/04/2026 đến ngày 17/07/2026
 
 <p align="center">
-  <img src="image-1.png" alt="Tran Trung Hieu" style="max-width: 320px; width: 100%; height: auto;">
+  <img src="/2280600981_trantrunghieu_workshopaws/images/avatar.png" alt="Tran Trung Hieu" style="max-width: 320px; width: 100%; height: auto;">
 </p>
 
 
