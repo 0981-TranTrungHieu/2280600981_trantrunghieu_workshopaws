@@ -163,7 +163,4 @@ pm2 logs netflop-api
 curl -I https://netflop.win/api/health
 ~~~
 
-{{% notice warning %}}
-Only show placeholder values in the report. Do not expose access keys, database passwords, client secrets, JWT secrets, or CloudFront private keys.
-{{% /notice %}}
 <!-- NETFLOP_IMPLEMENTATION_END -->
