@@ -174,7 +174,4 @@ pm2 logs netflop-api
 curl -I https://netflop.win/api/health
 ~~~
 
-{{% notice warning %}}
-Trong báo cáo chỉ đưa biến mẫu. Không chụp hoặc ghi access key, database password, client secret, JWT secret và CloudFront private key.
-{{% /notice %}}
 <!-- NETFLOP_IMPLEMENTATION_END -->
